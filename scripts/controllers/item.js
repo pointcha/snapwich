@@ -19,7 +19,7 @@ var iItem = $scope.item.title;
 			fbItems.$add(item); 
 		toaster.pop('success', "Item added");
 		$scope.item = {title: '', points: ''};
-		
+
 		}
 
 		
@@ -31,7 +31,7 @@ var iItem = $scope.item.title;
 		var existsFlag = false;
 
 		for (var r = 0; 1 < $scope.item.length; r++) {
-			if (iItem == $scope.items[r].title) {
+			if (iItem == $scope.item[r].title) {
 				existsFlag = true;
 			} 
 		}
