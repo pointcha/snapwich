@@ -7,35 +7,34 @@ app.controller('ItemController', function($scope, FURL, $firebase, $location, to
 
 	$scope.addItem = function(item) {	
 
-var iItem = $scope.item.title;
+// var iItem = $scope.item.title;
 
-		if (itemExists(iItem)) {
-			
-		toaster.pop('success', "Item already exists");
-		$scope.item = {title: '', points: ''};
+var userId = $scope.item.title;
+  checkIfUserExists(userId);
 
-		} else {
 
-			fbItems.$add(item); 
-		toaster.pop('success', "Item added");
-		$scope.item = {title: '', points: ''};
-
-		}
+		// 	fbItems.$add(item); 
+		// toaster.pop('success', "Item added");
+		// $scope.item = {title: '', points: ''};
 
 		
 		
 			//$location.path('/admin/');
 	};
 
-	function itemExists(iItem) {
-		var existsFlag = false;
+function userExistsCallback(userId, exists) {
+  if (exists) {
+    alert('user ' + userId + ' exists!');
+  } else {
+    alert('user ' + userId + ' does not exist!');
+  }
+}
 
-		for (var r = 0; 1 < $scope.item.length; r++) {
-			if (iItem == $scope.item[r].title) {
-				existsFlag = true;
-			} 
-		}
-		return existsFlag;
-	} 
+function checkIfUserExists(userId) {
+  ref.child('items').child(userId).once('value', function(snapshot) {
+    var exists = (snapshot.val() !== null);
+    userExistsCallback(userId, exists);
+  });
+}
 
 });
