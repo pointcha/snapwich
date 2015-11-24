@@ -5,7 +5,8 @@ var app = angular
   'ngAnimate',    
   'ngResource',
   'ngRoute',    
-  'firebase'
+  'firebase',
+  'toaster'
   ])
 
   .constant('FURL', 'https://snapwich.firebaseio.com/')
@@ -14,16 +15,22 @@ var app = angular
     $routeProvider      
     .when('/', {
       templateUrl: 'views/login.html',
-      controller: 'AuthController'
+      //controller: 'AuthController'
     })
     .when('/entry', {
       templateUrl: 'views/entry.html'  
     })
     .when('/create', {
-      templateUrl: 'views/create.html'  
+      templateUrl: 'views/create.html',
+      controller: 'ChallengeController' 
+    })
+    .when('/add', {
+      templateUrl: 'views/add.html',
+      controller: 'ItemController' 
     })
     .when('/admin', {
-      templateUrl: 'views/admin.html'  
+      templateUrl: 'views/admin.html',
+      controller: 'ChallengeController'  
     })
     .otherwise({
       redirectTo: '/'

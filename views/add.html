@@ -14,18 +14,18 @@
 	<div class="col-xs-12 logo large-logo"></div>
 </div>
 
-<form ng-submit="createChallenge(challenge)">
+<form ng-submit="addItem(item)">
 <div class="row create-fields">
 	<div class="col-xs-10 col-md-offset-1 form-entry">
-		<input type="text" ng-model="challenge.title" class="form-control challenge-title-field" placeholder="Challenge Title" aria-describedby="Challenge Title">
+		<input type="text" ng-model="item.title" class="form-control item-title-field" placeholder="Snapwhich Item" aria-describedby="Snapwich Item">
 	</div>
 
 	<div class="col-xs-10 col-md-offset-1 form-entry">
-		<input type="number" ng-model="challenge.itemNumber" class="form-control item-number-field" placeholder="Number of Items" aria-describedby="Number of Items" min="1" max="50">
+		<input type="number" ng-model="item.points" class="form-control item-point-field" placeholder="Point Value (max 10pt)" aria-describedby="Point Value max 10 points" min="1" max="10">
 	</div>
 </div>
 
 <div class="row">
-	<input type="submit" value="Create Challenge" class="col-xs-12 bottom-button"></input>
+	<input type="submit" value="Add Item" class="col-xs-12 bottom-button"></input>
 </div>
 </form>

@@ -1,1 +1,41 @@
-<div>admin</div>
+<div class="row navigation halftone">
+<div class="col-xs-3">
+	<i id="exit-btn" class="left-btn-area ion-chevron-left"></i>
+</div>
+<div class="col-xs-6">
+	
+</div>
+<div class="col-xs-3">
+	<i id="create-btn" class="right-btn-area ion-ios-compose-outline"></i>
+</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 logo small-logo"></div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 item-container">
+
+<ul class=" challenge-wrapper">
+
+	<li ng-repeat="challenge in challenges">
+		<div class="challenge-go"><i id="exit-btn" class="challenge-go ion-chevron-right"></i></div>
+		<div class="challenge-title">{{challenge.title}}</div>
+		<div class="challenge-sub">
+		<div class="challenge-code">CODE: {{challenge.code}}</div>
+		<div class="challenge-leader">LEADER: </div>
+		<div class="challenge-num">ITEMS: {{challenge.itemNumber}}</div>
+	</div>
+		
+	</li>
+
+</ul>
+
+
+	</div>
+</div>
+
+<div class="row challenge">
+	<div class="col-xs-12 bottom-button blank"></div>
+</div>

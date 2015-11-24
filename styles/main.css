@@ -10,10 +10,162 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: -webkit-linear-gradient(left top, #3a588c, #182334); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(bottom right, #3a588c, #182334); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(bottom right, #3a588c, #182334); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(to bottom right, #3a588c, #182334); /* Standard syntax */
+	background: -webkit-linear-gradient(left top, #3e9489, #16665d); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #3e9489, #16665d); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #3e9489, #16665d); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #3e9489, #16665d); /* Standard syntax */
 	color: white;
-	
+}
+
+
+.logo {
+    background-image: url("../assets/img/logo.png");
+    background-repeat: no-repeat;
+}
+
+.large-logo {
+    height: 300px;
+    background-size: auto 250px;
+    background-position: center center;
+}
+
+.small-logo {
+    background-size: auto 200px;
+    background-position: top center;
+    margin-top: -3px;
+    height: 230px;
+}
+
+.login-logo {
+    position: fixed;
+    text-align: center;
+    bottom: 50px;
+}
+
+.navigation {
+    height: 50px;
+}
+
+.left-btn-area {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 3rem;
+}
+
+.right-btn-area {
+    position: fixed;
+    top: 13px;
+    right: 20px;
+    font-size: 4rem;
+}
+
+.halftone {
+}
+
+.bottom-button {
+    position: fixed;
+    background-color: #ffc20e;
+    width: 100%;
+    height: 50px;
+    padding: 10px 0;
+    font-size: 2rem;
+    bottom: 0;
+    text-align: center;
+    color: #16665d;
+    text-transform: uppercase;
+    border: none;
+}
+
+.bottom-button.blank {
+    background-color: #16665d;
+}
+
+.form-entry {
+	width: 100%;
+}
+
+.create-fields, .entry-field {
+    position: relative;
+    top: -60px;
+}
+
+.create-fields .form-entry {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.item-container {
+    position: fixed;
+    top: 200px;
+    bottom: 50px;
+    background-color: white;
+    color: darkgray;
+    overflow: scroll;
+}
+
+.challenge-wrapper {
+	font-family: "Lato";
+	font-weight: 300;
+}
+
+.item-container ul {
+    list-style-type: none;
+    margin-left: -55px;
+    margin-right: -15px;
+}
+
+ul li{
+    border-bottom: 1px rgba(88, 86, 76, 0.25) solid;
+    padding: 5px 5px 5px 20px;
+}
+
+ul li:nth-child(even){
+    background-color: rgba(88, 86, 76, 0.05);
+}
+
+ul li:nth-child(odd){
+    background-color: #fff;
+}
+
+ul li:last-child{
+    border-bottom: none;
+}
+
+.challenge-sub {
+    width: calc(100% - 60px);
+}
+
+.challenge-title {
+    width: calc(100% - 60px);
+    font-size: 2rem;
+    color: rgb(88, 86, 76);
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.challenge-code {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.challenge-leader {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.challenge-num {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.challenge-go {
+    position: relative;
+    float: right;
+    color: rgba(88, 86, 76, 0.25);
+    width: 40px;
+    right: 0;
+    font-size: 4rem;
+    margin: -2px 5px 0 0;
+    text-align: right;
 }
