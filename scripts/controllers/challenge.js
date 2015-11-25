@@ -8,6 +8,8 @@ app.controller('ChallengeController', function($scope, FURL, $firebase, $locatio
 
 	$scope.createChallenge = function(challenge) {	
 
+// generate unique code
+
 		var iCode = randomString(7, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 		while (codeExists(iCode)) {
 			iCode = randomString(7, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
