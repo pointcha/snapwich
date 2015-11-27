@@ -16,7 +16,7 @@ app.controller('ItemController', function($scope, FURL, $firebase, $location, to
 				toaster.pop('warning', "Item already exists");
 			} else {
 				// does not exist
-				ref.child('items').child(item.title).set({ title: item.title, points: item.points });
+				ref.child('items').child(item.title.toLowerCase()).set({ title: item.title, points: item.points });
 				toaster.pop('success', "Item added");
 				$scope.item = {title: '', points: ''};
 			}
