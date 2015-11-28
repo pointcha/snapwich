@@ -6,17 +6,17 @@ app.controller('ItemController', function($scope, FURL, $firebase, $location, to
 	var fbItems = $firebase(ref.child('items')).$asArray();
 
 	$scope.addItem = function(item) {
-
 		var userId = $scope.item.title;
+		var itemid = userId.replace(/[\W]/g,'');
 
-		checkForTitle(item.title, function(doesExist) {
+		checkForTitle(itemid, function(doesExist) {
 
 			if (doesExist) {
 				// already exists
 				toaster.pop('warning', "Item already exists");
 			} else {
 				// does not exist
-				ref.child('items').child(item.title.toLowerCase()).set({ title: item.title, points: item.points });
+				ref.child('items').child(itemid.toLowerCase()).set({ title: item.title, points: item.points });
 				toaster.pop('success', "Item added");
 				$scope.item = {title: '', points: ''};
 			}

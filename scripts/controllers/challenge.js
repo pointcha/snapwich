@@ -8,7 +8,7 @@ app.controller('ChallengeController', function($scope, FURL, $firebase, $locatio
 
 	$scope.challenges = fbChallenges;
 
-		$scope.createChallenge = function(challenge) {	
+	$scope.createChallenge = function(challenge) {	
 
 			// generate unique code
 
@@ -36,15 +36,12 @@ app.controller('ChallengeController', function($scope, FURL, $firebase, $locatio
 				ref.child('challenge').child(challenge.code).set({ title: challenge.title.toLowerCase(), code: challenge.code, itemNum: challenge.itemNumber, status: challenge.status});
 				
 
-for (var j = 0; j < challengearray.length; j++) { 
-console.log(challengearray);
-	var challengeitem = challengearray[j].title;
-	console.log(challengeitem);
-	ref.child('challenge').child(challenge.code).child('items').child(challengeitem).set({ points: challengearray[j].points });
-}
-
-
-				
+				for (var j = 0; j < challengearray.length; j++) { 
+					console.log(challengearray);
+					var challengeitem = challengearray[j].title;
+					console.log(challengeitem);
+					ref.child('challenge').child(challenge.code).child('items').child(challengeitem).set({ points: challengearray[j].points });
+				}	
 
 				toaster.pop('success', "Challenge created");
 				$location.path('/admin/');
@@ -66,23 +63,39 @@ console.log(challengearray);
 		}
 
 		function randomIntFromInterval(min,max) {
-    return Math.floor(Math.random()*(max-min+1)+min);
-}
+			return Math.floor(Math.random()*(max-min+1)+min);
+		}
 
-function shuffleArray(array, numberinarray) {
+		function shuffleArray(array, numberinarray) {
 // shuffle array
-    for (var i = numberinarray - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
+for (var i = numberinarray - 1; i > 0; i--) {
+	var j = Math.floor(Math.random() * (i + 1));
+	var temp = array[i];
+	array[i] = array[j];
+	array[j] = temp;
+}
 console.log(array);
-// pull last items into final array
-var itemnumber = $scope.challenge.itemNum;
-var challengearray = array.slice(Math.max(array.length - itemnumber, 1))
-console.log(challengearray);
-    return challengearray;
+	// pull last items into final array
+	var itemnumber = $scope.challenge.itemNum;
+	var challengearray = array.slice(Math.max(array.length - itemnumber, 1))
+	console.log(challengearray);
+	return challengearray;
 }
 
-	});
+$scope.checkChallenge = function() {
+
+	ref.once("value", function(snapshot) {
+
+		var b = snapshot.child("challenge").exists();
+		console.log(b);
+		if (b) {
+		$location.path('/admin')
+	} else {
+		$location.path('/create')
+	}
+});
+	}
+
+	
+
+});

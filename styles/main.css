@@ -4,6 +4,15 @@
 	
 }
 
+a {
+	color: #FFF;
+}
+
+a:hover {
+	color: #FFC20E;
+    text-decoration: none;
+}
+
 .mobile-wrapper {
 	position: fixed;
 	top: 0;
