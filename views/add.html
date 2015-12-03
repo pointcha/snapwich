@@ -1,6 +1,6 @@
 <div class="row navigation halftone">
 <div class="col-xs-3">
-	<i id="exit-btn" class="left-btn-area ion-chevron-left"></i>
+	<i id="exit-btn" class="left-btn-area ion-chevron-left" ng-click="go('/login')"></i>
 </div>
 <div class="col-xs-6">
 	
@@ -16,11 +16,11 @@
 
 <form ng-submit="addItem(item)">
 <div class="row create-fields">
-	<div class="col-xs-10 col-md-offset-1 form-entry">
-		<input type="text" ng-model="item.title" class="form-control item-title-field" placeholder="Snapwhich Item" aria-describedby="Snapwich Item">
+	<div class="col-xs-12 form-entry">
+		<input type="text" ng-model="item.title" class="form-control item-title-field" placeholder="Add a Snapwhich Item" aria-describedby="Snapwich Item">
 	</div>
 
-	<div class="col-xs-10 col-md-offset-1 form-entry">
+	<div class="col-xs-12 form-entry">
 		<input type="number" ng-model="item.points" class="form-control item-point-field" placeholder="Point Value (max 10pt)" aria-describedby="Point Value max 10 points" min="1" max="10">
 	</div>
 </div>

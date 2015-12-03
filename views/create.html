@@ -1,6 +1,6 @@
 <div class="row navigation halftone">
 <div class="col-xs-3">
-	<i id="exit-btn" class="left-btn-area ion-chevron-left"></i>
+	<i id="exit-btn" class="left-btn-area ion-chevron-left" ng-click="go('/entry')"></i>
 </div>
 <div class="col-xs-6">
 	
@@ -16,12 +16,12 @@
 
 <form ng-submit="createChallenge(challenge)">
 <div class="row create-fields">
-	<div class="col-xs-10 col-md-offset-1 form-entry">
-		<input type="text" ng-model="challenge.title" class="form-control challenge-title-field" placeholder="Challenge Title" aria-describedby="Challenge Title">
+	<div class="col-xs-12 form-entry">
+		<input type="text" ng-model="challenge.title" class="form-control challenge-title-field" placeholder="Challenge Title" aria-describedby="Challenge Title" maxlength="20">
 	</div>
 
-	<div class="col-xs-10 col-md-offset-1 form-entry">
-		<input type="number" ng-model="challenge.itemNumber" class="form-control item-number-field" placeholder="Number of Items" aria-describedby="Number of Items" min="1" max="50">
+	<div class="col-xs-12 form-entry">
+		<input type="number" ng-model="challenge.itemNumber" class="form-control item-number-field" placeholder="Number of Items (max 50)" aria-describedby="Number of Items" min="1" max="50">
 	</div>
 </div>
 

@@ -89,13 +89,17 @@ $scope.checkChallenge = function() {
 		var b = snapshot.child("challenge").exists();
 		console.log(b);
 		if (b) {
-		$location.path('/admin')
+		$location.path('/admin');
 	} else {
-		$location.path('/create')
+		$location.path('/create');
 	}
 });
 	}
 
 	
+// straight navigation redirection
+	$scope.go = function ( path ) {
+  $location.path( path );
+};
 
 });

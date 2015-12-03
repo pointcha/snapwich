@@ -1,6 +1,6 @@
 <div class="row navigation halftone">
 <div class="col-xs-3">
-	<i id="exit-btn" class="left-btn-area ion-chevron-left"></i>
+	<i id="exit-btn" class="left-btn-area ion-chevron-left" ng-click="go('/entry')"></i>
 </div>
 <div class="col-xs-6">
 	
@@ -24,7 +24,7 @@
 		<div class="challenge-title">{{challenge.title}}</div>
 		<div class="challenge-sub">
 		<div class="challenge-code">CODE: {{challenge.code}}</div>
-		<div class="challenge-leader">LEADER: </div>
+		<!-- <div class="challenge-leader">LEADER: </div> -->
 		<div class="challenge-num">ITEMS: {{challenge.itemNum}}</div>
 	</div>
 		
@@ -36,6 +36,6 @@
 	</div>
 </div>
 
-<div class="row challenge">
-	<div class="col-xs-12 bottom-button blank"></div>
+<div class="row bottom-button" ng-click="go('/create')">
+	<div class="col-xs-12">Create New Challenge</div>
 </div>

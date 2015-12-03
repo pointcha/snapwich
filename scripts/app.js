@@ -15,10 +15,11 @@ var app = angular
     $routeProvider      
     .when('/', {
       templateUrl: 'views/login.html',
-      //controller: 'AuthController'
+      controller: 'ChallengeController' 
     })
     .when('/login', {
-      templateUrl: 'views/login.html'  
+      templateUrl: 'views/login.html',
+      controller: 'ChallengeController'   
     })
     .when('/entry', {
       templateUrl: 'views/entry.html',
