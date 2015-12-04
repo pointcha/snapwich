@@ -26,7 +26,7 @@
 <link href="icons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
     
   </head>
-  <body ng-app="SnapwichApp">
+  <body ng-app="SnapwichApp" ng-controller="NavController">
 
     <!-- Toaster status: info, wait, error, success, warning -->
     <toaster-container toaster-options="{'time-out': 300, 'close-button':true, 'position-class':'toast-top-full-width'}"></toaster-container>
@@ -66,6 +66,7 @@
     <script src="scripts/controllers/auth.js"></script>
     <script src="scripts/controllers/challenge.js"></script>
     <script src="scripts/controllers/item.js"></script>
+    <script src="scripts/controllers/nav.js"></script>
 
     <script src="scripts/services/challenge.js"></script>
     

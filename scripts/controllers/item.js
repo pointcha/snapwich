@@ -30,9 +30,4 @@ app.controller('ItemController', function($scope, FURL, $firebase, $location, to
 		});
 	}
 
-// straight navigation redirection
-	$scope.go = function ( path ) {
-  $location.path( path );
-};
-
 });
