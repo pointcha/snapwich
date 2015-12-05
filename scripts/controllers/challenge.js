@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('ChallengeController', function($scope, FURL, $firebase, $location, Challenge, toaster) {
+app.controller('ChallengeController', function($scope, FURL, $firebase, $location, $rootScope, Challenge, toaster) {
 
 	var ref = new Firebase(FURL);
 	var fbChallenges = $firebase(ref.child('challenge')).$asArray();
@@ -42,7 +42,6 @@ app.controller('ChallengeController', function($scope, FURL, $firebase, $locatio
 					console.log(challengeitem);
 					ref.child('challenge').child(challenge.code).child('items').child(challengeitem).set({ points: challengearray[j].points });
 				}	
-
 				toaster.pop('success', "Challenge created");
 				$location.path('/admin/');
 			}
@@ -67,35 +66,32 @@ app.controller('ChallengeController', function($scope, FURL, $firebase, $locatio
 		}
 
 		function shuffleArray(array, numberinarray) {
-// shuffle array
-for (var i = numberinarray - 1; i > 0; i--) {
-	var j = Math.floor(Math.random() * (i + 1));
-	var temp = array[i];
-	array[i] = array[j];
-	array[j] = temp;
-}
-console.log(array);
-	// pull last items into final array
-	var itemnumber = $scope.challenge.itemNum;
-	var challengearray = array.slice(Math.max(array.length - itemnumber, 1))
-	console.log(challengearray);
-	return challengearray;
-}
+		// shuffle array
+			for (var i = numberinarray - 1; i > 0; i--) {
+				var j = Math.floor(Math.random() * (i + 1));
+				var temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+			// pull last items into final array
+			var itemnumber = $scope.challenge.itemNum;
+			var challengearray = array.slice(Math.max(array.length - itemnumber, 1))
+			console.log(challengearray);
+			return challengearray;
+		}
 
-$scope.checkChallenge = function() {
+	$scope.checkChallenge = function() {
 
-	ref.once("value", function(snapshot) {
-
+		ref.once("value", function(snapshot) {
 		var b = snapshot.child("challenge").exists();
-		$location.path('/admin');
-	// 	if (snapshot.val() !== null) {
-	// 		alert(b);
-		
-	// 	alert(b);
-	// } else {
-	// 	$location.path('/create');
-	// }
-});
-	}
+		$rootScope.$apply(function() {
 
+		if (b) {
+			$location.path('/admin');
+		} else {
+			$location.path('/create');
+			}
+		});
+	});
+}
 });
