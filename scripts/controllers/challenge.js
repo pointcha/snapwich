@@ -93,5 +93,6 @@ app.controller('ChallengeController', function($scope, FURL, $firebase, $locatio
 			}
 		});
 	});
+
 }
 });

@@ -32,8 +32,12 @@ a:hover {
     background-repeat: no-repeat;
 }
 
+.bump-up {
+    margin-bottom: -60px;
+}
+
 .large-logo {
-    height: 300px;
+    height: 250px;
     background-size: auto 250px;
     background-position: center center;
 }
@@ -51,6 +55,38 @@ a:hover {
     bottom: 50px;
 }
 
+.btn-login {
+    background-color: transparent;
+    color: #fff;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: "Lato";
+    font-weight: 300;
+}
+
+.btn-register {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: "Lato";
+    font-weight: 300;
+}
+
+.btn-login:hover {
+    background-color: #ffc20e;
+    color: #16665d;
+    font-weight: 300;
+}
+
+.half {
+    width: 50%;
+}
+
+.full {
+    width: 90%;
+}
+
 .navigation {
     height: 50px;
 }
@@ -60,6 +96,12 @@ a:hover {
     top: 20px;
     left: 20px;
     font-size: 3rem;
+}
+
+.rotate {
+-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
 }
 
 .right-btn-area {
@@ -85,6 +127,8 @@ a:hover {
     color: #16665d;
     text-transform: uppercase;
     border: none;
+    font-family: "Lato";
+    font-weight: 300;
 }
 
 .bottom-button.blank {
@@ -182,7 +226,7 @@ ul li:last-child{
     text-align: right;
 }
 
-
+/*Toaster*/
 
 #toast-container.toast-top-full-width > div, #toast-container.toast-bottom-full-width > div {
     margin-top: 22px !important;
@@ -203,6 +247,3 @@ ul li:last-child{
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   filter: alpha(opacity=100) !important;
 }
-
-
-

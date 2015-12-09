@@ -19,7 +19,11 @@ var app = angular
     })
     .when('/login', {
       templateUrl: 'views/login.html',
-      controller: 'ChallengeController'   
+      controller: 'AuthController'   
+    })
+    .when('/register', {
+      templateUrl: 'views/register.html',
+      controller: 'AuthController'   
     })
     .when('/entry', {
       templateUrl: 'views/entry.html',

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('NavController', function($scope, $location, toaster) {
+app.controller('NavController', function($scope, $location, Auth, toaster) {
 
   $scope.logout = function() {    
     Auth.logout();    

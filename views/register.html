@@ -1,0 +1,50 @@
+<div class="row navigation halftone">
+  <div class="col-xs-3">
+   <i id="exit-btn" class="left-btn-area ion-chevron-left" ng-click="go('/login')"></i>
+ </div>
+ <div class="col-xs-6">
+
+ </div>
+ <div class="col-xs-3">
+   <i id="create-btn" class="right-btn-area"></i>
+ </div>
+</div>
+<div class="row">
+	<a href="#/add"><div class="col-xs-12 logo large-logo bump-up"></div></a>
+</div>
+
+
+
+<div class="row">
+	<div class="col-xs-12 form-entry">
+    <form ng-submit="register(user)">
+
+     <div class="input-group">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+      </div>
+      <input type="name" ng-model="user.name" placeholder="Name" class="form-control" required>
+    </div><br>
+    
+    <div class="input-group">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+      </div>
+      <input type="email" ng-model="user.email" placeholder="Email" class="form-control" required>
+    </div><br>
+
+    <div class="input-group">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+      </div>
+      <input type="password" ng-model="user.password" placeholder="Password" class="form-control" required>
+    </div><br>   
+
+    <div class="text-center col-xs-12">
+      <div role="group" aria-label="login and register">
+        <input type="submit" value="Register" class="btn btn-default btn-login half">
+      </div>
+    </div>
+  </form>
+</div>
+</div>
